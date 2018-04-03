@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="MBC\bibliocommuneBundle\Entity\Reservation" table="reservation">
+    <indexes>
+      <index name="id_adherant" columns="id_adherant"/>
+      <index name="id_oeuvre" columns="id_oeuvre"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="datereservation" type="date" column="dateReservation" nullable="false"/>
+    <many-to-one field="idOeuvre" target-entity="Oeuvre" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_oeuvre" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idAdherant" target-entity="Adherant" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_adherant" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,44 @@
+bibliocommune_homepage:
+    path:     /
+    defaults: { _controller: bibliocommuneBundle:Default:index }
+
+home:
+    path:     /home
+    defaults: { _controller: bibliocommuneBundle:Front:home }
+homes:
+    path:     /apropo
+    defaults: { _controller: bibliocommuneBundle:Front:homes }
+
+
+blogs:
+    path:     /blog
+    defaults: { _controller: bibliocommuneBundle:Front:blog }
+
+
+construct:
+    path:     /construction
+    defaults: { _controller: bibliocommuneBundle:Front:construct }
+
+
+contact:
+    path:     /contact
+    defaults: { _controller: bibliocommuneBundle:Front:contacts }
+programes:
+    path:     /programme
+    defaults: { _controller: bibliocommuneBundle:Front:programe }
+
+
+    
+administrator:
+    path:     /homeadmin
+    defaults: { _controller: bibliocommuneBundle:Admin:homeAdmin }
+
+admins:
+    path:     /admins
+    defaults: { _controller: bibliocommuneBundle:Admin:admins }
+
+#route LOGIN ADMIN
+login_admin:
+    path:     /login
+    defaults: { _controller:bibliocommuneBundle:Admin:login }
+
